@@ -1,14 +1,13 @@
 import React from "react";
-import UyeOl from "./UyeOl";
+
 import Ziyaret from "./Ziyaret";
 import Anasayfa from "./Anasayfa";
-import Arkadas from "./Arkadas";
+
 import Profil from "./Profil";
 import {
   BrowserRouter as Router,  
   Route,
-  Switch,
-  NavLink,
+
 } from "react-router-dom";
 function App() {
   return (

@@ -5,11 +5,11 @@ import {
   CardHeader,
   CardTitle,
   CardText,
-  Label,
+
 } from "reactstrap";
 import "./App.css";
 import "./Logo/logo.PNG";
-import { Modal, Button, Row, Col, Form } from "react-bootstrap";
+import { Button,  Form } from "react-bootstrap";
 
 class UyeOl extends Component {
   constructor(props) {

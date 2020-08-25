@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import {
   BrowserRouter as Router,
-  Route,
-  Switch,
+
   NavLink,
 } from "react-router-dom";
 class Arkadas extends Component {
@@ -40,16 +39,16 @@ class Arkadas extends Component {
             <div className="comment">
               {user.map((kullanici) => (
                 <div>
-                  <a
+                  <NavLink 
                     className="avatar"
                     style={{ height: "50px", width: "50px" }}
                   >
                     <img src={kullanici.Profil} />
-                  </a>
+                  </NavLink>
                   <div className="content">
-                    <a className="author" key={kullanici.Id}>
+                    <NavLink className="author" key={kullanici.Id}>
                       {kullanici.Ad + " " + kullanici.Soyad}
-                    </a>
+                    </NavLink>
                     <div className="metadata">
                       <span className="date"></span>
                     </div>
