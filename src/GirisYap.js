@@ -6,38 +6,33 @@ import {
   CardTitle,
   CardText,
   Label,
-  NavLink
+  NavLink,
 } from "reactstrap";
 import { Form } from "react-bootstrap";
 import { BrowserRouter as Router, withRouter } from "react-router-dom";
 import "./App.css";
 import "./Logo/logo.PNG";
-import Modal from 'react-awesome-modal';
-
-
-
-
+import Modal from "react-awesome-modal";
 
 
 class GirisYap extends Component {
   state = {
     kontrol: " ",
-    visible:false,
+    visible: false,
   };
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-  openModal(){
+  openModal() {
     this.setState({
-         visible:true
-    })
- 
+      visible: true,
+    });
   }
-  closeModal(){
+  closeModal() {
     this.setState({
-      visible:false
- })
+      visible: false,
+    });
   }
 
   //async ve await kullanım sebebi işlemleri sıraya sokmak.
@@ -61,14 +56,10 @@ class GirisYap extends Component {
         });
       });
 
-    if (this.state.kontrol === "Added Succesfully") {
-     
-    } else {
+    if (this.state.kontrol === "Add operation failed") {
       this.openModal();
     }
   }
-
-
   render() {
     return (
       <Router>
@@ -109,27 +100,38 @@ class GirisYap extends Component {
                     placeholder="Şifre Girin"
                   ></Form.Control>
                 </CardText>
-
+                
+                
+                
                 <button
                   className="btn btn-danger form-control"
                   type="submit"
                   onClick={this.handleClickButton}
-                >
                   
+                >
                   Giriş Yap
                 </button>
-                <Modal 
-                    visible={this.state.visible}
-                    width="500"
-                    height="200"
-                    effect="fadeInUp"
-                    onClickAway={() => this.closeModal()}
+                
+                <Modal
+                  visible={this.state.visible}
+                  width="500"
+                  height="200"
+                  effect="fadeInUp"
+                  onClickAway={() => this.closeModal()}
                 >
-                    <div  style={{textAlign:"center",padding:"15px"}}>
-                        <h1>Hata !</h1>
-                        <p>Lütfen Kullanıcı Adınızı ya da Şifrenizi Kontrol Ediniz !!! .</p>
-                        <NavLink className="form-control btn btn-danger" onClick={() => this.closeModal()}>Close</NavLink>
-                    </div>
+                  <div style={{ textAlign: "center", padding: "15px" }}>
+                    <h1>Hata !</h1>
+                    <p>
+                      Lütfen Kullanıcı Adınızı ya da Şifrenizi Kontrol Ediniz
+                      !!! .
+                    </p>
+                    <NavLink
+                      className="form-control btn btn-primary"
+                      onClick={() => this.closeModal()}
+                    >
+                      Kapat
+                    </NavLink>
+                  </div>
                 </Modal>
               </form>
             </CardBody>

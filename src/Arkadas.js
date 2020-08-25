@@ -16,7 +16,7 @@ class Arkadas extends Component {
     this.refleshList();
   }
   refleshList() {
-    fetch("https://localhost:44312/api/values")
+    fetch("https://localhost:44312/api/Kullanici/1")
       .then((response) => {
         return response.json();
       })
@@ -35,20 +35,20 @@ class Arkadas extends Component {
             className="ui comments"
             style={{ margin: "auto", marginTop: "50px" }}
           >
-            <h3 className="ui dividing header">Üyeler</h3>
+            <h3 className="ui dividing header" style={{textAlign:"center"}}>Üyeler</h3>
             <div className="comment">
               {user.map((kullanici) => (
                 <div>
-                  <NavLink 
+                  <p
                     className="avatar"
                     style={{ height: "50px", width: "50px" }}
                   >
                     <img src={kullanici.Profil} />
-                  </NavLink>
+                  </p>
                   <div className="content">
-                    <NavLink className="author" key={kullanici.Id}>
+                    <p className="author" key={kullanici.Id}>
                       {kullanici.Ad + " " + kullanici.Soyad}
-                    </NavLink>
+                    </p>
                     <div className="metadata">
                       <span className="date"></span>
                     </div>

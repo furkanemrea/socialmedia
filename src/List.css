@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: white;
+}
+
+.home .post .image-style img {
+  width: 120px;
+  margin-top: 0px;
+  margin-left: 0px;
+}
+
+.home .post {
+  overflow: hidden;
+  height: 250px;
+  padding-bottom: 90px;
+}
+.image-style {
+  right: -2px;
+  bottom: 15px;
+  position: fixed;
+  position: absolute;
+  opacity: 0.5;
+
+  transform: skew(10deg, -35deg);
+}
+
+#img {
+  width: 180px;
+  height: 200px;
+}
+
+
+@media screen and (max-width: 768px) {
+  #img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    margin-left: 35%;
+  }
+  .home .post {
+    overflow: hidden;
+    height: 400px;
+    padding-bottom: 90px;
+  }
+}
+

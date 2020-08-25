@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import UyeOl from "./UyeOl";
 import GirisYap from "./GirisYap";
+import Anasayfa from "./Anasayfa";
 
 import {
-  BrowserRouter as Router,  
+  BrowserRouter as Router,
   Route,
   Switch,
   NavLink,
@@ -45,7 +46,7 @@ class Ziyaret extends Component {
                   to="GirisYap"
                 >
                   Giriş Yap
-                </NavLink>  
+                </NavLink>
                 <NavLink
                   className="btn btn-outline-warning my-2 my-sm-0"
                   type="submit"
@@ -59,9 +60,9 @@ class Ziyaret extends Component {
           </nav>
           <div>
             <Switch>
-            <Route path="/UyeOl" exact component={UyeOl}/>
-              <Route path="/GirisYap" exact component={GirisYap}/>
-              <Route path="/Profil" exact component={GirisYap}/>
+              <Route path="/UyeOl" exact component={UyeOl} />
+              <Route path="/GirisYap" exact component={GirisYap} giris={Anasayfa} />
+           
             </Switch>
           </div>
         </div>
