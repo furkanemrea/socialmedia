@@ -4,13 +4,14 @@ import Profil from "./Profil";
 import Info from "./Info";
 import Gonderi from "./Gonderi";
 import Kesfet from "./Kesfet";
+import { Button, Icon } from "semantic-ui-react";
+
 import {
   BrowserRouter as Router,
   Route,
   Switch,
-  NavLink
+  NavLink,
 } from "react-router-dom";
-
 
 class Anasayfa extends Component {
   render() {
@@ -61,6 +62,8 @@ class Anasayfa extends Component {
             </div>
           </nav>
           <div>
+
+  
             <Switch>
               <Route path="/Info" exact component={Info} />
               <Route path="/Arkadas" exact component={Arkadas} />

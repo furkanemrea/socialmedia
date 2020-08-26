@@ -1,14 +1,17 @@
 import React, { Component } from "react";
-import { Button, Icon, Label, Image, Reveal, Grid } from "semantic-ui-react";
+import { Button,Comment, Icon, Label, Image, Reveal, Grid } from "semantic-ui-react";
 
 class Kesfet extends Component {
   constructor(props) {
     super();
     this.handleFavori = this.handleFavori.bind(this);
     this.state = {
-      begeni: 0,
+      Id:0,
       profil: [],
     };
+  }
+  componentDidUpdate(){
+    this.getList();
   }
   getList() {
     fetch("https://localhost:44312/api/posts")
@@ -21,13 +24,22 @@ class Kesfet extends Component {
         });
       });
   }
-  handleFavori() {
-    this.setState({
-      begeni: +1,
+  handleFavori(e,Id) {
+  
+    e.preventDefault();
+    fetch("https://localhost:44312/api/posts/"+Id, {
+      method: "PUT",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      }
     });
+
+    document.getElementsByName("btn"+Id).disabled=true;
+   
   }
-  componentDidMount(){
-      this.getList();
+  componentDidMount() {
+    this.getList();
   }
   render() {
     const { profil } = this.state;
@@ -36,7 +48,10 @@ class Kesfet extends Component {
         {profil.map((gonderi) => (
           <div>
             <h3 style={{ textAlign: "center", color: "blue" }}>
-              {gonderi.Ad}{" "}{gonderi.Soyad}{" ( "}{gonderi.KullaniciAd}{" )"}
+              {gonderi.Ad} {gonderi.Soyad}
+              {" ( "}
+              {gonderi.KullaniciAd}
+              {" )"}
             </h3>
             <Grid centered columns={4}>
               <Grid.Row>
@@ -64,15 +79,15 @@ class Kesfet extends Component {
                 </Grid.Column>
                 <p>
                   <span>
-                    <div style={{ color: "gray" }}>03.12.2018</div>
+                    <div style={{ color: "gray" }}>{gonderi.Tarih}</div>
                   </span>
                   {gonderi.Aciklama}
                 </p>
               </Grid.Row>
-
+      
               <Grid.Row>
                 <Button as="div" labelPosition="right">
-                  <Button icon onClick={this.handleFavori} color="red">
+                  <Button icon onClick={(e)=>this.handleFavori(e,gonderi.Id)}    color="red">
                     <Icon name="heart" />
                     Beğen
                   </Button>
@@ -82,7 +97,6 @@ class Kesfet extends Component {
                 </Button>
               </Grid.Row>
             </Grid>
-
             <hr></hr>
           </div>
         ))}

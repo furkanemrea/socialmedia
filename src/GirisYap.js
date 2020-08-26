@@ -9,11 +9,11 @@ import {
   NavLink,
 } from "reactstrap";
 import { Form } from "react-bootstrap";
+import { Button, Icon } from 'semantic-ui-react'
 import { BrowserRouter as Router, withRouter } from "react-router-dom";
 import "./App.css";
 import "./Logo/logo.PNG";
 import Modal from "react-awesome-modal";
-
 
 class GirisYap extends Component {
   state = {
@@ -100,18 +100,19 @@ class GirisYap extends Component {
                     placeholder="Şifre Girin"
                   ></Form.Control>
                 </CardText>
-                
-                
-                
-                <button
+
+                <Button
+                  animated="vertical"
+                  onClick={this.handleClickButton}
                   className="btn btn-danger form-control"
                   type="submit"
-                  onClick={this.handleClickButton}
-                  
                 >
-                  Giriş Yap
-                </button>
-                
+                  <Button.Content visible>Giriş Yap</Button.Content>
+                  <Button.Content hidden color="red">
+                    <Icon name="heart" /> HOŞGELDİNİZ
+                  </Button.Content>
+                </Button>
+
                 <Modal
                   visible={this.state.visible}
                   width="500"
