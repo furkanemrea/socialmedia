@@ -5,27 +5,40 @@ class Gonderi extends Component {
     constructor(props) {
         super(props);
         this.handleChange=this.handleChange.bind(this);
+        this.handleSubmit=this.handleSubmit.bind(this);
 
         this.state = {
           photo: ' ',
         };
       }
-       handleChange(e){
-        e.preventDefault();
-
+       handleChange(event){
         this.setState({
-          photo:document.getElementsByName('photo').InnerText
+          photo:event.target.value
         })
       }
-      componentDidUpdate(){
-        this.handleChange();
+
+      handleSubmit(e){
+        e.preventDefault();
+        fetch("https://localhost:44312/api/posts", {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            Id: null,
+            KullaniciId: 1,
+            Resim: e.target.photo.value,
+            Aciklama: e.target.description.value,
+          }),
+        })
       }
 
   render() {
     
     return (
       <div>
-        <form method="post" >
+        <form onSubmit={this.handleSubmit} >
           <div className="post card">
             <div className="card-body">
               <div className="row">
@@ -44,7 +57,7 @@ class Gonderi extends Component {
                     <span className="card-title">Fotoğraf Linki</span>
                       <Form.Control type="text" className="form-control" name="photo" onChange={this.handleChange} ></Form.Control>
                       <span className="card-title">Açıklama</span>
-                      <Form.Control type="text" className="form-control"></Form.Control>
+                      <Form.Control type="text" className="form-control" name="description"></Form.Control>
            
                       
                     </p>

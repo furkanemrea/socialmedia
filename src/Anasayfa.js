@@ -3,7 +3,7 @@ import Arkadas from "./Arkadas";
 import Profil from "./Profil";
 import Info from "./Info";
 import Gonderi from "./Gonderi";
-
+import Kesfet from "./Kesfet";
 import {
   BrowserRouter as Router,
   Route,
@@ -49,6 +49,11 @@ class Anasayfa extends Component {
                     Gönderi Oluştur <span className="sr-only">(current)</span>
                   </NavLink>
                 </li>
+                <li className="nav-item active">
+                  <NavLink className="nav-link" to="/Kesfet">
+                    Keşfet <span className="sr-only">(current)</span>
+                  </NavLink>
+                </li>
               </ul>
               <span className="navbar-text text-warning">
                 Furkan Emre ALTINTAŞ
@@ -61,6 +66,7 @@ class Anasayfa extends Component {
               <Route path="/Arkadas" exact component={Arkadas} />
               <Route path="/Profil" exact component={Profil} />
               <Route path="/Gonderi" exact component={Gonderi} />
+              <Route path="/Kesfet" exact component={Kesfet} />
             </Switch>
           </div>
         </div>

@@ -16,7 +16,7 @@ class Arkadas extends Component {
     this.refleshList();
   }
   refleshList() {
-    fetch("https://localhost:44312/api/Kullanici/1")
+    fetch("https://localhost:44312/api/Values")
       .then((response) => {
         return response.json();
       })
