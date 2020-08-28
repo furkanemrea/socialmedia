@@ -67,6 +67,7 @@ class UyeOl extends Component {
                         name="KullaniciAd"
                         required
                         
+                        
                         placeholder="Kullanıcı Adı Girin"
                       ></Form.Control>
                     </Form.Group>

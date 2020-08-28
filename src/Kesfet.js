@@ -6,6 +6,7 @@ class Kesfet extends Component {
     super();
     this.handleFavori = this.handleFavori.bind(this);
     this.state = {
+      isButtonDisabled: false,
       Id:0,
       profil: [],
     };
@@ -21,11 +22,11 @@ class Kesfet extends Component {
       .then((data) => {
         this.setState({
           profil: data,
+          IsFavori:"Beğen",
         });
       });
   }
   handleFavori(e,Id) {
-  
     e.preventDefault();
     fetch("https://localhost:44312/api/posts/"+Id, {
       method: "PUT",
@@ -34,9 +35,10 @@ class Kesfet extends Component {
         "Content-Type": "application/json",
       }
     });
+    this.setState({
+      IsFavori: "Beğendin"
+    });
 
-    document.getElementsByName("btn"+Id).disabled=true;
-   
   }
   componentDidMount() {
     this.getList();
@@ -87,9 +89,9 @@ class Kesfet extends Component {
       
               <Grid.Row>
                 <Button as="div" labelPosition="right">
-                  <Button icon onClick={(e)=>this.handleFavori(e,gonderi.Id)}    color="red">
+                  <Button icon onClick={(e)=>this.handleFavori(e,gonderi.Id)} color="red" disabled={this.state.isButtonDisabled}>
                     <Icon name="heart" />
-                    Beğen
+                    {this.state.IsFavori}
                   </Button>
                   <Label as="a" basic pointing="left">
                     {gonderi.Begeni}

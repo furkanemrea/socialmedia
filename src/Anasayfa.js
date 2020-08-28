@@ -5,6 +5,7 @@ import Info from "./Info";
 import Gonderi from "./Gonderi";
 import Kesfet from "./Kesfet";
 import { Button, Icon } from "semantic-ui-react";
+import AramaYap from "./AramaYap";
 
 import {
   BrowserRouter as Router,
@@ -14,6 +15,11 @@ import {
 } from "react-router-dom";
 
 class Anasayfa extends Component {
+  state = {
+    posts: 'asd ',
+  };
+
+
   render() {
     return (
       <Router>
@@ -57,20 +63,21 @@ class Anasayfa extends Component {
                 </li>
               </ul>
               <span className="navbar-text text-warning">
-                Furkan Emre ALTINTAŞ
+                <input type="text" placeholder="Arama Yap" style={{borderTopLeftRadius:"15px",borderTopRightRadius:"15px",height:"30px"}}></input>
+                <NavLink to="AramaYap" arama="asd" className="btn btn-danger">Ara</NavLink>
               </span>
             </div>
           </nav>
           <div>
-
-  
             <Switch>
               <Route path="/Info" exact component={Info} />
               <Route path="/Arkadas" exact component={Arkadas} />
               <Route path="/Profil" exact component={Profil} />
               <Route path="/Gonderi" exact component={Gonderi} />
               <Route path="/Kesfet" exact component={Kesfet} />
+              <Route path="/AramaYap/" exact component={AramaYap} />
             </Switch>
+            
           </div>
         </div>
       </Router>
