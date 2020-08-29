@@ -15,11 +15,23 @@ import {
 } from "react-router-dom";
 
 class Anasayfa extends Component {
+  constructor(props){
+    super(props);
+    this.handleChange=this.handleChange.bind(this);
+
+  }
   state = {
-    posts: 'asd ',
+    userSearch: ' ',
   };
-
-
+  handleChange(e){
+    e.preventDefault();
+    
+    this.setState({
+      userSearch: e.target.value,
+    })
+    
+  
+  }
   render() {
     return (
       <Router>
@@ -63,21 +75,49 @@ class Anasayfa extends Component {
                 </li>
               </ul>
               <span className="navbar-text text-warning">
-                <input type="text" placeholder="Arama Yap" style={{borderTopLeftRadius:"15px",borderTopRightRadius:"15px",height:"30px"}}></input>
-                <NavLink to="AramaYap" arama="asd" className="btn btn-danger">Ara</NavLink>
+                <input
+                  type="text"
+                  onChange={(e)=>this.handleChange(e)}
+                  name="userSearch"
+                  placeholder="Arama Yap"
+                  style={{
+                    borderTopLeftRadius: "15px",
+                    borderTopRightRadius: "15px",
+                    height: "30px",
+                  }}
+                ></input>
+                <NavLink to="AramaYap" arama="asd" className="btn btn-danger">
+                  Ara
+                </NavLink>
               </span>
             </div>
           </nav>
           <div>
             <Switch>
-              <Route path="/Info" exact component={Info} />
+              <Route
+                path="/Info"
+                exact
+                render={(props) => (
+                  <>
+                    <Info user="user"/>
+                  </>
+                )}
+              />
               <Route path="/Arkadas" exact component={Arkadas} />
               <Route path="/Profil" exact component={Profil} />
               <Route path="/Gonderi" exact component={Gonderi} />
               <Route path="/Kesfet" exact component={Kesfet} />
-              <Route path="/AramaYap/" exact component={AramaYap} />
+           
+              <Route
+                path="/AramaYap"
+                exact
+                render={(props) => (
+                  <>
+                    <AramaYap userSearch={this.state.userSearch}/>
+                  </>
+                )}
+              />
             </Switch>
-            
           </div>
         </div>
       </Router>

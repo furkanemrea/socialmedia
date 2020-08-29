@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 class Info extends Component {
   render() {
+  
     return (
       <div>
         <div className="post card">
@@ -13,7 +14,7 @@ class Info extends Component {
               <div className="col-md-10">
                 <div className="card-content">
               
-                
+                 
                 </div>
               </div>
             </div>
