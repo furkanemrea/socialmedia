@@ -54,7 +54,7 @@ class Arkadas extends Component {
                     </div>
                     <div className="text">{kullanici.KullaniciAd} </div>
                     <div className="actions">
-                      <NavLink className="reply" to="Profil">Profiline Git</NavLink>
+                      <NavLink className="reply" to="/GoProfil">Profiline Git</NavLink>
                     </div>
                   </div>
                 </div>

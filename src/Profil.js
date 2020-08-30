@@ -7,6 +7,8 @@ import {
   faLocationArrow,
   faCalendar,
   faBook,
+  faSchool,
+  faCity,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
@@ -32,8 +34,8 @@ class Profil extends Component {
   }
   render() {
     return (
-      <div>
-        <h4 className="center" style={{textAlign:"center"}}>Profil Bilgileri</h4>
+      <div style={{marginTop:"15px"}}>
+        <h4 className="center" style={{textAlign:"center"}}>Profilim</h4>
         <div className="home container">
           {this.state.posts.map((card) => {
             return (
@@ -78,14 +80,14 @@ class Profil extends Component {
                           ></FontAwesomeIcon>{" "}
                           {card.Mail}
                         </p>
-                        {/* <p>
-                          <FontAwesomeIcon icon={faCalendar}></FontAwesomeIcon>{" "}
-                          Date Of Join
+                        <p>
+                          <FontAwesomeIcon icon={faSchool}></FontAwesomeIcon>{" "}
+                          {card.Okul}
                         </p>
                         <p>
-                          <FontAwesomeIcon icon={faAdjust}></FontAwesomeIcon>{" "}
-                          Settings
-                        </p> */}
+                          <FontAwesomeIcon icon={faCity}></FontAwesomeIcon>{" "}
+                          {card.Sehir}
+                        </p>
                       </div>
                     </div>
                   </div>

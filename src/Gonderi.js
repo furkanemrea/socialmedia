@@ -8,7 +8,7 @@ class Gonderi extends Component {
         this.handleSubmit=this.handleSubmit.bind(this);
 
         this.state = {
-          photo: ' ',
+          photo: 'https://via.placeholder.com/600/e924e6',
         };
       }
        handleChange(event){

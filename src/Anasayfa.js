@@ -6,6 +6,7 @@ import Gonderi from "./Gonderi";
 import Kesfet from "./Kesfet";
 import { Button, Icon } from "semantic-ui-react";
 import AramaYap from "./AramaYap";
+import GoProfil from "./GoProfil";
 
 import {
   BrowserRouter as Router,
@@ -81,12 +82,14 @@ class Anasayfa extends Component {
                   name="userSearch"
                   placeholder="Arama Yap"
                   style={{
-                    borderTopLeftRadius: "15px",
-                    borderTopRightRadius: "15px",
+                    
+                    borderBlockColor:"red",
+                    borderRadius:"15px",
                     height: "30px",
+                    textAlign:"center"
                   }}
                 ></input>
-                <NavLink to="AramaYap" arama="asd" className="btn btn-danger">
+                <NavLink to="AramaYap" arama="asd" className="btn btn-danger" style={{marginLeft:"15px",borderRadius:"15px",marginBottom:"5px"}}>
                   Ara
                 </NavLink>
               </span>
