@@ -30,12 +30,16 @@ class Anasayfa extends Component {
     this.setState({
       userSearch: e.target.value,
     })
+
+
     
   
   }
+
+  
   render() {
     return (
-      <Router>
+      <Router >
         <div>
           <nav className="navbar navbar-expand-lg navbar-light bg-info">
             <NavLink className="navbar-brand" to="/Info">
@@ -56,7 +60,7 @@ class Anasayfa extends Component {
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item active">
                   <NavLink className="nav-link" to="/Arkadas">
-                    Arkadaşlarım <span className="sr-only">(current)</span>
+                  Arkadaşlarım <span className="sr-only">(current)</span>
                   </NavLink>
                 </li>
                 <li className="nav-item active">
@@ -110,7 +114,7 @@ class Anasayfa extends Component {
               <Route path="/Profil" exact component={Profil} />
               <Route path="/Gonderi" exact component={Gonderi} />
               <Route path="/Kesfet" exact component={Kesfet} />
-           
+    
               <Route
                 path="/AramaYap"
                 exact

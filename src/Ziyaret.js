@@ -10,8 +10,10 @@ import {
   NavLink,
 } from "react-router-dom";
 
-
 class Ziyaret extends Component {
+  state = {
+    logged: false,
+  };
   render() {
     return (
       <Router>
@@ -61,8 +63,7 @@ class Ziyaret extends Component {
           <div>
             <Switch>
               <Route path="/UyeOl" exact component={UyeOl} />
-              <Route path="/GirisYap" exact component={GirisYap} giris={Anasayfa} />
-           
+              <Route path="/GirisYap" exact component={GirisYap} />
             </Switch>
           </div>
         </div>

@@ -14,7 +14,7 @@ import { BrowserRouter as Router, withRouter } from "react-router-dom";
 import "./App.css";
 import "./Logo/logo.PNG";
 import Modal from "react-awesome-modal";
-
+import history from './Anasayfa';
 class GirisYap extends Component {
   state = {
     kontrol: " ",
@@ -58,6 +58,9 @@ class GirisYap extends Component {
 
     if (this.state.kontrol === "Add operation failed") {
       this.openModal();
+    }
+    else{
+      this.props.history.push('/Anasayfa');
     }
   }
   render() {

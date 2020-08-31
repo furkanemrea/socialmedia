@@ -4,7 +4,7 @@ import React, { Component } from 'react'
     render() {
         return (
             <div>
-                Go Profil
+                Go Profilasd
             </div>
         )
     }
