@@ -35,7 +35,7 @@ class Arkadas extends Component {
             className="ui comments"
             style={{ margin: "auto", marginTop: "50px" }}
           >
-            <h3 className="ui dividing header" style={{textAlign:"center"}}>Üyeler</h3>
+            <h3 className="ui dividing header" style={{textAlign:"center"}}>Kullanıcılar</h3>
             <div className="comment">
               {user.map((kullanici) => (
                 <div>

@@ -6,6 +6,7 @@ import Gonderi from "./Gonderi";
 import Kesfet from "./Kesfet";
 import { Button, Icon } from "semantic-ui-react";
 import AramaYap from "./AramaYap";
+import Grup from "./Grup";
 
 import {
   BrowserRouter as Router,
@@ -73,6 +74,11 @@ class Anasayfa extends Component {
                     Keşfet <span className="sr-only">(current)</span>
                   </NavLink>
                 </li>
+                <li className="nav-item active">
+                  <NavLink className="nav-link" to="/Grup">
+                    Grup Bul <span className="sr-only">(current)</span>
+                  </NavLink>
+                </li>
               </ul>
               <span className="navbar-text text-warning">
                 <input
@@ -81,12 +87,12 @@ class Anasayfa extends Component {
                   name="userSearch"
                   placeholder="Arama Yap"
                   style={{
-                    borderTopLeftRadius: "15px",
-                    borderTopRightRadius: "15px",
+                    borderRadius: "15px",
+                    marginRight:"10px",
                     height: "30px",
                   }}
                 ></input>
-                <NavLink to="AramaYap" arama="asd" className="btn btn-danger">
+                <NavLink to="AramaYap" arama="asd" className="btn btn-danger" style={{marginBottom:"5px",borderRadius:"15px"}}>
                   Ara
                 </NavLink>
               </span>
@@ -103,6 +109,7 @@ class Anasayfa extends Component {
                   </>
                 )}
               />
+              <Route path="/Grup" exact component={Grup} />
               <Route path="/Arkadas" exact component={Arkadas} />
               <Route path="/Profil" exact component={Profil} />
               <Route path="/Gonderi" exact component={Gonderi} />

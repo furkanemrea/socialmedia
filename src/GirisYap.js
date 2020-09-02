@@ -35,7 +35,6 @@ class GirisYap extends Component {
     });
   }
 
-  //async ve await kullanım sebebi işlemleri sıraya sokmak.
   async handleSubmit(e) {
     e.preventDefault();
     await fetch("https://localhost:44312/api/user", {
@@ -55,7 +54,6 @@ class GirisYap extends Component {
           kontrol: data,
         });
       });
-
     if (this.state.kontrol === "Add operation failed") {
       this.openModal();
     }
